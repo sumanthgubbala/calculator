@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibanacci</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="fib-container">
+        <div class="fib-cal">
+            <h1>Fibonacci Sequence Generator</h1>
+            
+                
+                <div class="fib-input-box">
+                    <h2>Enter Number of Terms: </h2>
+                    <input id="n" text="number" placeholder="enter number" >
+                <button  onclick="fib()">find</button>
+                
+            </div>
+            <p id="result"></p>
+            <script type="text/javascript">
+                function fib(){
+                    const numTerms = parseInt(document.getElementById("n").value);
+            if (numTerms <= 0) {
+                document.getElementById("fibonacci").innerHTML = "Please enter a positive integer.";
+                return;
+            }
+
+            let fibSequence = [0, 1];
+            for (let i = 2; i < numTerms; i++) {
+                fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+            }
+
+            // If numTerms is 1, we need to adjust the sequence to only show the first term
+            if (numTerms === 1) {
+                fibSequence = [0];
+            }
+
+            document.getElementById("result").innerHTML = `Fibonacci Sequence: ${fibSequence.join(', ')}`;
+                }
+            </script>
+
+        </div>
+    </div>
+    
+</body>
+
+<footer >
+    <p>Copyright sumanth</p>
+</footer>
+</html>

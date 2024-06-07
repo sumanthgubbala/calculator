@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="title">
+            <img src="https://cdn2.iconfinder.com/data/icons/business-and-finance-vol-2-2/512/Calculator-1024.png" alt="logo" />
+        </div>
+        <div class="navbar">
+            <input type="search" name="display" id="search-input" list="input"  placeholder=" search">
+            <datalist id="input">
+                <option value="Basic Calculator">Basic Calculator</option>
+                <option value="Age Calculator">Age Calculator</option>
+                <option value="Percentage Calculator">Percentage Calculator</option>
+                <option value="EMI Calculator">EMI Calculator</option>
+                <option value="Fibonacci Calculator">Fibonacci Calculator</option>
+
+                <option value="Prime Number Calculator">Prime Number Calculator</option>
+
+            </datalist>
+            <a href="main.html">Home</a>
+            <a href="contactus.html">Contact</a>
+            
+        </div>
+    </nav>
+    <header >
+      <h1> My Calculator</h1>
+        </header>
+    <div class="grid-container">
+        <div class="card">
+            <h2>Basic Calculator</h2>
+            <a href="index.html" class="button">Click here</a>
+        </div>
+        <div class="card">
+            <h2>Age Calculator</h2>
+            <a href="agecal.html" class="button">Click here</a>
+        </div>
+        <div class="card">
+            <h2>Percentage Calculator</h2>
+            <a href="percentage.html" class="button">Click here</a>
+        </div>
+        <div class="card">
+            <h2>EMI Calculator</h2>
+            <a href="EMI-cal.html" class="button">Click here</a>
+        </div>
+        <div class="card">
+            <h2>Fibonacci Calculator</h2>
+            <a href="fibonacci.html" class="button">Click here</a>
+        </div>
+        <div class="card">
+            <h2>Prime Number Calculator</h2>
+            <a href="Primenumber.html" class="button">Click here</a>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+          const searchInput = document.getElementById('search-input');
+
+            searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = searchInput.value.toLowerCase();
+                const calculatorPage = getCalculatorPage(searchTerm);
+                if (calculatorPage) {
+                window.location.href = calculatorPage;
+                }
+            }
+            });
+
+            function getCalculatorPage(searchTerm) {
+            switch (searchTerm) {
+                case 'basic calculator':
+                return 'index.html';
+                case 'age calculator':
+                return 'agecal.html';
+                case 'percentage calculator':
+                return 'percentage.html';
+                case 'emi calculator':
+                return 'EMI-cal.html';
+                case 'fibonacci calculator':
+                return 'fibonacci.html';
+                case 'prime number calculator':
+                return 'Primenumber.html';
+                default:
+                return null;
+            }
+            }
+    </script>
+    
+</body>
+
+
+<footer >
+    <p>Copyright sumanth</p>
+    <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Terms and conditions</a></li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+</footer>
+
+</html>

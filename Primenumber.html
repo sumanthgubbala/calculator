@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="prime-container">
+        <div class="prime-cal">
+            <h2>Prime Number Calculator</h2>
+            <div class="fib-input-box">
+                <input type="number" id="num" placeholder="Enter a number">
+                <button onclick="checkPrime()">Check if Prime</button></div>
+                <p id="result"></p>
+                <h2>Range of prime Numbers:</h2>
+                <div class="prime-input-box">
+                    <label for="start">Start </label>
+                    <input type="number" id="start" />
+                    <label for="end">End</label>
+                    <input type="number" id="end" />
+                    <button onclick="checkPrimeRange()">Check Range</button></div>
+                    <p id="result_2"></p>
+                
+        
+    </div>
+    </div>
+    <script>
+        function checkPrime() {
+            const num = parseInt(document.getElementById('num').value);
+            let isPrime = true;
+            if(num==1){
+                document.getElementById('result').innerHTML = `${num} IS a  <span>prime number</span>`;
+                retrun;
+
+            }
+
+            if (num <= 1) {
+                isPrime = false;
+            } else {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrime) {
+                document.getElementById('result').innerHTML = `${num} IS a  <span>prime number</span>`;
+                
+
+            }
+            else{
+                document.getElementById('result').innerHTML = ` ${num} Is <span>Not a prime number </span>`;
+            }
+
+            
+        }
+
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function checkPrimeRange() {
+            const start = parseInt(document.getElementById('start').value);
+            const end = parseInt(document.getElementById('end').value);
+            let primeNumbers = [];
+
+            for (let num = start; num <= end; num++) {
+                if (isPrime(num)) {
+                    primeNumbers.push(num);
+                }
+            }
+
+            document.getElementById('result_2').innerHTML = `Prime numbers between ${start} and ${end}: <span>${primeNumbers.join(', ')}</span>`;
+        }
+    </script>
+    
+</body>
+
+<footer >
+    <p>Copyright sumanth</p>
+</footer>
+
+</html>

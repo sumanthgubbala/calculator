@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage</title>
+    <link rel="stylesheet" href="style.css">
+    <style >
+       
+    </style>
+</head>
+<body>
+    <div class="percentage-container">
+        <div class="percentage-cal">
+            <h1>Percentage <br><span>Calculator</span></h1>
+            <div class="per-input-box">
+                <h2>what is <input type="number" id="percent" placeholder="enter">% of <input type="number" id="number" placeholder="enter"> ?</h2>
+                <button onclick="percentage()"> Calculate</button><br>
+                <input type="text" id="result_1" placeholder="answer" readonly />
+   
+            </div>
+            <div class="per-input-box">
+                <h2> 
+                    <input type="number" id="number_2"/> is what percentage of <input type="number" id="number_3" > ?
+
+                </h2>
+                <button  onclick="percentage_2()"> Calculate</button><br>
+                <input type="text" id="result_2" readonly  />
+            </div>
+        </div>
+
+    </div>
+    <script >
+        function percentage(){
+            var percent =document.getElementById("percent").value;
+            var num= document.getElementById("number").value;
+            document.getElementById("result_1").value=(num/100) * percent;
+        }
+
+        function percentage_2(){
+            var num_1=document.getElementById("number_2").value;
+            var num_2=document.getElementById("number_3").value;
+            document.getElementById("result_2").value= (num_1*100)/num_2+"%";
+        }
+
+    </script>
+
+    
+</body>
+</html>
